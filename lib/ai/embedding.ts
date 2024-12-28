@@ -49,5 +49,7 @@ export const findRelevantContent = async (userQuery: string) => {
     .orderBy(t => desc(t.similarity))
     .limit(4);
 
+  console.log('similarGuides', similarGuides);
+
   return similarGuides;
 };

@@ -17,19 +17,18 @@ export async function POST(req: Request) {
     if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,
     messages,
     tools: {
-      addResource: tool({
-        description: `add a resource to your knowledge base.
-          If the user provides a random piece of knowledge unprompted, use this tool without asking for confirmation.`,
-        parameters: z.object({
-          content: z
-            .string()
-            .describe('the content or resource to add to the knowledge base'),
-        }),
-        execute: async ({ content }) => createResource({ content }),
-      }),
+      // addResource: tool({
+      //   description: `add a resource to your knowledge base.
+      //     If the user provides a random piece of knowledge unprompted, use this tool without asking for confirmation.`,
+      //   parameters: z.object({
+      //     content: z
+      //       .string()
+      //       .describe('the content or resource to add to the knowledge base'),
+      //   }),
+      //   execute: async ({ content }) => createResource({ content }),
+      // }),
       getInformation: tool({
-        description: `get information from your knowledge base to answer questions about the user's query.
-          If the user's question is not related to the knowledge base, respond, "Sorry, I don't know. Our knowledge base is about users preferences."`,
+        description: `get information from your knowledge base to answer questions"`,
         parameters: z.object({
           question: z.string().describe('the users question'),
         }),
