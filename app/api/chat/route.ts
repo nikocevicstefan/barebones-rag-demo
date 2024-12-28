@@ -13,6 +13,7 @@ export async function POST(req: Request) {
   const result = streamText({
     model: openai('gpt-4o'),
     system: `You are a helpful assistant. Check your knowledge base before answering any questions.
+    Format all your responses using markdown syntax for better readability.
     Only respond to questions using information from tool calls.
     if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,
     messages,
